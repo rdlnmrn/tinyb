@@ -11,11 +11,6 @@ else ()
 endif ()
 
 
-# Check that we can use javah
-if(NOT Java_JAVAH_EXECUTABLE)
-    message(FATAL_ERROR "Cannot locate javah executable.")
-endif(NOT Java_JAVAH_EXECUTABLE)
-
 set(CMAKE_JNI_TARGET TRUE)
 file(GLOB JAVA_SOURCES "*.java")
 add_jar(tinybjar ${JAVA_SOURCES}
@@ -23,24 +18,11 @@ add_jar(tinybjar ${JAVA_SOURCES}
                   OUTPUT_NAME tinyb
 )
 
-set(JAVA_CLASSES tinyb.BluetoothAdapter
-                 tinyb.BluetoothCallback
-                 tinyb.BluetoothDevice
-                 tinyb.BluetoothEvent
-                 tinyb.BluetoothGattCharacteristic
-                 tinyb.BluetoothGattService
-                 tinyb.BluetoothGattDescriptor
-                 tinyb.BluetoothManager
-                 tinyb.BluetoothObject
-                 tinyb.BluetoothType
-                 tinyb.BluetoothException
-                 tinyb.ObjectArgCallback
-                 tinyb.ObjectArrayArgCallback)
 add_custom_command (TARGET tinybjar
   POST_BUILD
   COMMAND ${CMAKE_COMMAND} -E echo "Generating JNI headers.."
   WORKING_DIRECTORY "${CMAKE_CURRENT_BINARY_DIR}/${CMAKE_FILES_DIRECTORY}/tinybjar.dir"
-  COMMAND ${Java_JAVAH_EXECUTABLE} -d jni/ -jni ${JAVA_CLASSES}
+  COMMAND ${JAVAC} -h jni/ ${JAVA_SOURCES}
 )
 
 set(JNI_HEADER_PATH "${CMAKE_CURRENT_BINARY_DIR}/${CMAKE_FILES_DIRECTORY}/tinybjar.dir/jni")
