@@ -1,3 +1,5 @@
+Attempting to pull together necessary/important fixes to the TinyB project. See *patches.org* for all the various changes I could find spread across pull requests/forks.
+
 Tiny Bluetooth LE Library
 =============
 

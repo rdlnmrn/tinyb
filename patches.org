@@ -1,0 +1,50 @@
+#+title: Possible desirable patches
+
+* Large rewrite?
+https://github.com/xranby/tinyb
+https://ict.zafena.se/cgit/direct_bt.git/
+https://jausoft.com/
+
+* Extra debugging print statements
+https://github.com/intel-iot-devkit/tinyb/compare/master...AxsysAutomation:tinyb:master
+
+* Version adjustments
+Include version as part of build artefact names.
+https://github.com/intel-iot-devkit/tinyb/compare/master...gpaglia:tinyb:master
+
+* Various changes
+Possibly already subsumed into master?
+https://github.com/intel-iot-devkit/tinyb/compare/master...impala454:tinyb:master
+
+* JNI FindClass "tinyb/BluetoothNotification" not found https://github.com/intel-iot-devkit/tinyb/compare/master...juiice:tinyb:master
+
+* =remove_all_devices= function
+https://github.com/intel-iot-devkit/tinyb/compare/master...Kulkov-Ivan:tinyb:master
+
+* =unique_ptr= change, mutex?
+I haven't looked at the code, so I have no way to know if this is sane.
+https://github.com/intel-iot-devkit/tinyb/compare/master...letsdev:tinyb:master
+
+* Notifications for extra data
+https://github.com/intel-iot-devkit/tinyb/compare/master...petreeftime:tinyb:master
+
+* BluetoothAgent, memory leak fix
+Quite recent at time of writing.
+https://github.com/intel-iot-devkit/tinyb/compare/master...rycstar:tinyb:master
+
+* Lots of work on changing some example code
+https://github.com/intel-iot-devkit/tinyb/compare/master...sarthakvijayvergiya:tinyb:master
+
+* =cmake= relaxation on expected fs layout
+https://github.com/intel-iot-devkit/tinyb/pull/178
+
+* Java 10+ fix
+Equivalent patch already merged.
+https://github.com/intel-iot-devkit/tinyb/pull/164
+
+* Another mutex commit
+https://github.com/intel-iot-devkit/tinyb/pull/147
+
+* Disable API version check
+Unsure if necessary.
+https://github.com/intel-iot-devkit/tinyb/issues/163#issuecomment-1088013390
